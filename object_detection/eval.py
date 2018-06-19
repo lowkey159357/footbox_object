@@ -117,9 +117,11 @@ def main(unused_argv):
       input_reader_builder.build,
       input_config)
 
-  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")  
+  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%configs%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")  
   print(configs)
+  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%input_config%%%%%%%%%%%%%%%%%%%%%%%%%%%")     
   print(input_config)
+  print("%%%%%%%%%%%%%%%%%%%%%input_config.label_map_path%%%%%%%%%%%%%%%%%%%")  
   print(input_config.label_map_path)
   print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")  
 
