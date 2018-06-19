@@ -10,7 +10,7 @@ export PYTHONPATH=$PYTHONPATH:$DIR:$DIR/slim:$DIR/object_detection
 
 # 定义各目录
 output_dir=/output  # 训练目录
-dataset_dir=/data/lowkey159357/week9-dataset # 数据集目录，这里是写死的，记得修改
+dataset_dir= /data/lowkey159357/week9-dataset # 数据集目录，这里是写死的，记得修改
 
 train_dir=$output_dir/train
 checkpoint_dir=$train_dir
@@ -29,7 +29,7 @@ echo "############dataset begin#################"
 cat $dataset_dir/$config
 echo "############"dataset end" #################"
 
-cp $dataset_dir/$config $pipeline_config_path
+cp  $config  $pipeline_config_path
 
 echo "############"pipeline_config_path begin" #################"
 cat $pipeline_config_path
