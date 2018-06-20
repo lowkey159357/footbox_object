@@ -116,15 +116,6 @@ def main(unused_argv):
   create_input_dict_fn = functools.partial(
       input_reader_builder.build,
       input_config)
-
-  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%configs%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")  
-  print(configs)
-  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%input_config%%%%%%%%%%%%%%%%%%%%%%%%%%%")     
-  print(input_config)
-  print("%%%%%%%%%%%%%%%%%%%%%input_config.label_map_path%%%%%%%%%%%%%%%%%%%")  
-  print(input_config.label_map_path)
-  print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")  
-
     
   label_map = label_map_util.load_labelmap(input_config.label_map_path)
   max_num_classes = max([item.id for item in label_map.item])
