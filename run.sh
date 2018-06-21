@@ -28,7 +28,7 @@ pipeline_config_path=$output_dir/$config
 cp  $config  $pipeline_config_path
 
 echo "############"pipeline_config_path begin" #################"
-tail -50  $pipeline_config_path
+tail -60  $pipeline_config_path
 echo "############"pipeline_config_path end" #################"
 
 for i in {0..4}  # for循环中的代码执行5此，这里的左右边界都包含，也就是一共训练500个step，每100step验证一次
