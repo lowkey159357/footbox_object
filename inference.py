@@ -56,7 +56,7 @@ if __name__ == '__main__':
     for u, name  in enumerate(filenames):
         obj=re.match('test', str(name))     # 正则表达式匹配，找出带test字样的图片文件
         if obj:
-            test_img_paths.append( os.path.join(FLAGS.dataset_dir, str(name)) )
+            test_image_paths.append( os.path.join(FLAGS.dataset_dir, str(name)) )
     print('\n',test_image_paths,'\n')
  
     with detection_graph.as_default():
@@ -66,8 +66,8 @@ if __name__ == '__main__':
             detection_scores = detection_graph.get_tensor_by_name('detection_scores:0')
             detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
             num_detections = detection_graph.get_tensor_by_name('num_detections:0')
-            for test_img_path in test_img_paths:
-                image = Image.open(test_img_path)
+            for test_image_path in test_image_paths:
+                image = Image.open(test_image_path)
                 image_np = load_image_into_numpy_array(image)
                 image_np_expanded = np.expand_dims(image_np, axis=0)
                 (boxes, scores, classes, num) = sess.run(
@@ -81,5 +81,5 @@ if __name__ == '__main__':
                     category_index,
                     use_normalized_coordinates=True,
                     line_thickness=8)
-                outname= 'output_' + os.path.basename(test_img_path) # 输出文件名
+                outname= 'output_' + os.path.basename(test_image_path) # 输出文件名
                 plt.imsave(os.path.join(FLAGS.output_dir, outname), image_np)  # 
